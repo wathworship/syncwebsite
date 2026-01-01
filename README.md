@@ -59,32 +59,33 @@ syncwebsite/
 ├─ index.html
 │
 ├─ components/
-│ ├─ layout/
-│ │ ├─ app-header.js
-│ │ ├─ app-footer.js
-│ │ └─ app-container.js
-│ │
-│ ├─ sections/
-│ │ ├─ hero-section.js
-│ │ ├─ vision-section.js
-│ │ ├─ mission-section.js
-│ │ ├─ strategy-section.js
-│ │ ├─ project-section.js
-│ │ ├─ region-section.js
-│ │ ├─ team-section.js
-│ │ └─ contact-section.js
-│ │
-│ └─ ui/
-│ ├─ ui-card.js
-│ ├─ ui-section-title.js
-│ ├─ ui-button.js
-│ ├─ ui-badge.js
-│ └─ ui-grid.js
+│  ├─ layout/
+│  │  ├─ app-header.js
+│  │  ├─ app-footer.js
+│  │  └─ app-container.js
+│  │
+│  ├─ sections/
+│  │  ├─ hero-section.js
+│  │  ├─ vision-section.js
+│  │  ├─ mission-section.js
+│  │  ├─ strategy-section.js
+│  │  ├─ project-section.js
+│  │  ├─ region-section.js
+│  │  ├─ team-section.js
+│  │  └─ contact-section.js
+│  │
+│  └─ ui/
+│     ├─ ui-card.js
+│     ├─ ui-section-title.js
+│     ├─ ui-button.js
+│     ├─ ui-badge.js
+│     └─ ui-grid.js
 │
 └─ assets/
-├─ images/
-├─ icons/
-└─ documents/
+   ├─ images/
+   ├─ icons/
+   └─ documents/
+
 
 
 ---
