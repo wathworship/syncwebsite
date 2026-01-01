@@ -1,0 +1,1115 @@
+<!doctype html>
+<html lang="th" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYNC - อนุชนสภาคริสตจักรในประเทศไทย</title>
+  <script>
+    // Mock Element SDK for testing outside Canva
+    window.elementSdk = {
+      config: {},
+      _element: null,
+      init: function(element) {
+        this._element = element;
+        this.config = { ...element.defaultConfig };
+        if (element.onConfigChange) {
+          element.onConfigChange(this.config);
+        }
+        return Promise.resolve();
+      },
+      setConfig: function(partialConfig) {
+        Object.assign(this.config, partialConfig);
+        if (this._element && this._element.onConfigChange) {
+          this._element.onConfigChange(this.config);
+        }
+        return Promise.resolve();
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+      font-family: 'Kanit', sans-serif;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .gradient-bg-1 {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .gradient-bg-2 {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+    
+    .gradient-bg-3 {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+    
+    .card-float {
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    .card-float:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    }
+    
+    .glow-effect {
+      box-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+    }
+    
+    .text-shadow {
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.4); }
+      50% { box-shadow: 0 0 40px rgba(102, 126, 234, 0.8); }
+    }
+    
+    .animate-pulse-glow {
+      animation: pulse-glow 3s ease-in-out infinite;
+    }
+    
+    .backdrop-blur {
+      backdrop-filter: blur(10px);
+    }
+    
+    .nav-blur {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full overflow-auto">
+  <div id="app" class="w-full min-h-full"><!-- Navigation -->
+   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex justify-between items-center py-4">
+      <div class="flex items-center space-x-3">
+       <div id="nav-logo" class="w-12 h-12 rounded-xl flex items-center justify-center font-black text-2xl glow-effect">
+        S
+       </div>
+       <div>
+        <div id="nav-title" class="font-black text-xl gradient-text">
+         SYNC
+        </div>
+        <div id="nav-subtitle" class="text-xs font-medium opacity-75">
+         อนุชนสภาคริสตจักรในประเทศไทย
+        </div>
+       </div>
+      </div>
+      <div class="hidden md:flex space-x-8"><a href="#home" class="font-semibold hover:opacity-100 opacity-70 transition-opacity">หน้าแรก</a> <a href="#sync" class="font-semibold hover:opacity-100 opacity-70 transition-opacity">SYNC</a> <a href="#about" class="font-semibold hover:opacity-100 opacity-70 transition-opacity">เกี่ยวกับเรา</a> <a href="#committee" class="font-semibold hover:opacity-100 opacity-70 transition-opacity">คณะกรรมการ</a> <a href="#gallery" class="font-semibold hover:opacity-100 opacity-70 transition-opacity">แกลเลอรี่</a> <a href="#projects" class="font-semibold hover:opacity-100 opacity-70 transition-opacity">โครงการ</a> <a href="#resources" class="font-semibold hover:opacity-100 opacity-70 transition-opacity">ทรัพยากร</a> <a href="#news" class="font-semibold hover:opacity-100 opacity-70 transition-opacity">ข่าวสาร</a> <a href="#join" class="font-semibold hover:opacity-100 opacity-70 transition-opacity">เข้าร่วม</a>
+      </div><button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+       </svg></button>
+     </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden backdrop-blur">
+     <div class="px-4 py-3 space-y-2"><a href="#home" class="block py-2 font-semibold">หน้าแรก</a> <a href="#sync" class="block py-2 font-semibold">SYNC</a> <a href="#about" class="block py-2 font-semibold">เกี่ยวกับเรา</a> <a href="#committee" class="block py-2 font-semibold">คณะกรรมการ</a> <a href="#gallery" class="block py-2 font-semibold">แกลเลอรี่</a> <a href="#projects" class="block py-2 font-semibold">โครงการ</a> <a href="#resources" class="block py-2 font-semibold">ทรัพยากร</a> <a href="#news" class="block py-2 font-semibold">ข่าวสาร</a> <a href="#join" class="block py-2 font-semibold">เข้าร่วม</a>
+     </div>
+    </div>
+   </nav><!-- Carousel Section -->
+   <section class="pt-20">
+    <div class="relative w-full overflow-hidden" style="height: 600px;">
+     <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out h-full"><!-- Slide 1 -->
+      <div class="carousel-slide min-w-full h-full flex-shrink-0 relative">
+       <div class="absolute inset-0 gradient-bg-1"></div>
+       <div class="relative z-10 h-full flex items-center justify-center px-4">
+        <div class="text-center text-white max-w-4xl">
+         <div class="text-8xl mb-6">
+          ⛺
+         </div>
+         <h2 class="text-5xl md:text-7xl font-black mb-4">National Youth Camp 2025</h2>
+         <p class="text-xl md:text-2xl font-light mb-8">ค่ายเยาวชนระดับชาติ • มีนาคม 2568</p><button class="px-8 py-4 bg-white text-purple-600 rounded-full font-bold text-lg hover:scale-110 transition-transform"> สมัครเลย </button>
+        </div>
+       </div>
+      </div><!-- Slide 2 -->
+      <div class="carousel-slide min-w-full h-full flex-shrink-0 relative">
+       <div class="absolute inset-0 gradient-bg-2"></div>
+       <div class="relative z-10 h-full flex items-center justify-center px-4">
+        <div class="text-center text-white max-w-4xl">
+         <div class="text-8xl mb-6">
+          🎤
+         </div>
+         <h2 class="text-5xl md:text-7xl font-black mb-4">Worship Night</h2>
+         <p class="text-xl md:text-2xl font-light mb-8">คืนนมัสการพิเศษ • ทุกเดือน</p><button class="px-8 py-4 bg-white text-pink-600 rounded-full font-bold text-lg hover:scale-110 transition-transform"> ดูรายละเอียด </button>
+        </div>
+       </div>
+      </div><!-- Slide 3 -->
+      <div class="carousel-slide min-w-full h-full flex-shrink-0 relative">
+       <div class="absolute inset-0 gradient-bg-3"></div>
+       <div class="relative z-10 h-full flex items-center justify-center px-4">
+        <div class="text-center text-white max-w-4xl">
+         <div class="text-8xl mb-6">
+          🏆
+         </div>
+         <h2 class="text-5xl md:text-7xl font-black mb-4">Bible Competition</h2>
+         <p class="text-xl md:text-2xl font-light mb-8">การแข่งขันพระคัมภีร์ • เร็วๆ นี้</p><button class="px-8 py-4 bg-white text-blue-600 rounded-full font-bold text-lg hover:scale-110 transition-transform"> ลงทะเบียน </button>
+        </div>
+       </div>
+      </div><!-- Slide 4 -->
+      <div class="carousel-slide min-w-full h-full flex-shrink-0 relative">
+       <div class="absolute inset-0" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+       <div class="relative z-10 h-full flex items-center justify-center px-4">
+        <div class="text-center text-white max-w-4xl">
+         <div class="text-8xl mb-6">
+          📚
+         </div>
+         <h2 class="text-5xl md:text-7xl font-black mb-4">Leadership Training</h2>
+         <p class="text-xl md:text-2xl font-light mb-8">การอบรมผู้นำ • ตลอดทั้งปี</p><button class="px-8 py-4 bg-white text-orange-600 rounded-full font-bold text-lg hover:scale-110 transition-transform"> เข้าร่วม </button>
+        </div>
+       </div>
+      </div>
+     </div><!-- Navigation Arrows --> <button id="carousel-prev" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/30 backdrop-blur rounded-full flex items-center justify-center hover:bg-white/50 transition-all">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
+      </svg></button> <button id="carousel-next" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/30 backdrop-blur rounded-full flex items-center justify-center hover:bg-white/50 transition-all">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+      </svg></button> <!-- Indicators -->
+     <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-3"><button class="carousel-indicator w-3 h-3 rounded-full bg-white transition-all" data-slide="0"></button> <button class="carousel-indicator w-3 h-3 rounded-full bg-white/50 transition-all" data-slide="1"></button> <button class="carousel-indicator w-3 h-3 rounded-full bg-white/50 transition-all" data-slide="2"></button> <button class="carousel-indicator w-3 h-3 rounded-full bg-white/50 transition-all" data-slide="3"></button>
+     </div>
+    </div>
+   </section><!-- Hero Section -->
+   <section id="home" class="relative min-h-full flex items-center justify-center overflow-hidden">
+    <div id="hero-gradient" class="absolute inset-0"></div><!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden opacity-20">
+     <div class="absolute w-96 h-96 rounded-full blur-3xl animate-float" style="background: rgba(102, 126, 234, 0.5); top: 10%; left: 10%;"></div>
+     <div class="absolute w-96 h-96 rounded-full blur-3xl animate-float" style="background: rgba(118, 75, 162, 0.5); top: 50%; right: 10%; animation-delay: 2s;"></div>
+     <div class="absolute w-96 h-96 rounded-full blur-3xl animate-float" style="background: rgba(79, 172, 254, 0.5); bottom: 10%; left: 50%; animation-delay: 4s;"></div>
+    </div>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 text-center pt-20 pb-20">
+     <div class="mb-8">
+      <div id="hero-badge" class="inline-block px-6 py-2 rounded-full font-bold text-sm mb-6 animate-pulse-glow">
+       อนุชนสภาคริสตจักรในประเทศไทย
+      </div>
+     </div>
+     <h1 id="hero-headline" class="text-7xl md:text-9xl font-black mb-6 tracking-tight text-shadow"></h1>
+     <p id="hero-tagline" class="text-2xl md:text-4xl font-light mb-8 opacity-90"></p>
+     <div id="hero-verse-container" class="max-w-3xl mx-auto mb-12 p-8 rounded-2xl backdrop-blur">
+      <p id="hero-verse" class="text-lg md:text-xl font-medium mb-2 leading-relaxed"></p>
+      <p id="hero-verse-ref" class="text-sm font-bold opacity-75">เอเฟซัส 4:12-13</p>
+     </div>
+     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center"><button id="hero-cta" class="px-10 py-5 rounded-full font-bold text-lg transition-all duration-300 hover:scale-110 hover:shadow-2xl"></button> <button id="hero-cta-secondary" class="px-10 py-5 rounded-full font-bold text-lg border-2 transition-all duration-300 hover:scale-105"> เรียนรู้เพิ่มเติม </button>
+     </div>
+    </div>
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+     <svg class="w-8 h-8 opacity-50 animate-bounce" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+     </svg>
+    </div>
+   </section><!-- What is SYNC Section -->
+   <section id="sync" class="py-24">
+    <div class="max-w-7xl mx-auto px-4">
+     <div class="text-center mb-20">
+      <h2 id="sync-title" class="text-5xl md:text-7xl font-black mb-6"></h2>
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto font-light">การเคลื่อนไหวที่ผสานความเชื่อ ชีวิต และคนรุ่นใหม่เข้าด้วยกัน</p>
+     </div>
+     <div class="grid md:grid-cols-4 gap-8">
+      <div id="sync-card-1" class="p-8 rounded-3xl card-float relative overflow-hidden">
+       <div class="absolute top-0 right-0 w-32 h-32 rounded-full blur-2xl opacity-30"></div>
+       <div class="relative">
+        <div class="text-6xl mb-6">
+         🔄
+        </div>
+        <h3 class="text-2xl font-bold mb-4">ผสานเป็นหนึ่งเดียว</h3>
+        <p class="font-light leading-relaxed">ผสานความเชื่อเข้ากับชีวิตจริง ไม่แยกออกจากกัน</p>
+       </div>
+      </div>
+      <div id="sync-card-2" class="p-8 rounded-3xl card-float relative overflow-hidden">
+       <div class="absolute top-0 right-0 w-32 h-32 rounded-full blur-2xl opacity-30"></div>
+       <div class="relative">
+        <div class="text-6xl mb-6">
+         🌐
+        </div>
+        <h3 class="text-2xl font-bold mb-4">เชื่อมโยงเครือข่าย</h3>
+        <p class="font-light leading-relaxed">เชื่อมต่อเยาวชนคริสเตียนทั่วประเทศ เป็นหนึ่งเดียว</p>
+       </div>
+      </div>
+      <div id="sync-card-3" class="p-8 rounded-3xl card-float relative overflow-hidden">
+       <div class="absolute top-0 right-0 w-32 h-32 rounded-full blur-2xl opacity-30"></div>
+       <div class="relative">
+        <div class="text-6xl mb-6">
+         ✨
+        </div>
+        <h3 class="text-2xl font-bold mb-4">คนรุ่นใหม่</h3>
+        <p class="font-light leading-relaxed">สร้างผู้นำรุ่นใหม่ที่พร้อมรับใช้และเปลี่ยนแปลงสังคม</p>
+       </div>
+      </div>
+      <div id="sync-card-4" class="p-8 rounded-3xl card-float relative overflow-hidden">
+       <div class="absolute top-0 right-0 w-32 h-32 rounded-full blur-2xl opacity-30"></div>
+       <div class="relative">
+        <div class="text-6xl mb-6">
+         ⚡
+        </div>
+        <h3 class="text-2xl font-bold mb-4">ศูนย์กลางคือพระคริสต์</h3>
+        <p class="font-light leading-relaxed">เดินไปด้วยกันภายใต้การนำของพระเจ้า</p>
+       </div>
+      </div>
+     </div>
+     <div class="mt-20 grid md:grid-cols-3 gap-12">
+      <div class="text-center">
+       <div class="text-5xl font-black mb-4 gradient-text">
+        ความเชื่อ
+       </div>
+       <p class="text-lg font-light">Faith that is alive and real</p>
+      </div>
+      <div class="text-center">
+       <div class="text-5xl font-black mb-4 gradient-text">
+        ชีวิต
+       </div>
+       <p class="text-lg font-light">Life that reflects Christ</p>
+      </div>
+      <div class="text-center">
+       <div class="text-5xl font-black mb-4 gradient-text">
+        ชุมชน
+       </div>
+       <p class="text-lg font-light">Community that moves together</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Committee Section -->
+   <section id="committee" class="py-24">
+    <div class="max-w-7xl mx-auto px-4">
+     <div class="text-center mb-20">
+      <div class="text-sm font-bold mb-4 opacity-75">
+       ผู้นำของเรา
+      </div>
+      <h2 class="text-5xl md:text-7xl font-black mb-6">คณะกรรมการ</h2>
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto font-light">ทีมผู้นำที่ทุ่มเทรับใช้เยาวชนคริสเตียนไทย</p>
+     </div>
+     <div class="grid md:grid-cols-4 gap-8 mb-12">
+      <div class="text-center card-float p-8 rounded-3xl" style="background: #ffffff;">
+       <div class="w-32 h-32 mx-auto mb-6 rounded-full gradient-bg-1 flex items-center justify-center text-6xl">
+        👤
+       </div>
+       <h3 class="text-xl font-bold mb-2">ประธานกรรมการ</h3>
+       <p class="text-sm font-light mb-4">ผู้นำทีม SYNC</p>
+       <div class="text-sm opacity-75">
+        ภาวนา • อธิษฐาน • นำทาง
+       </div>
+      </div>
+      <div class="text-center card-float p-8 rounded-3xl" style="background: #ffffff;">
+       <div class="w-32 h-32 mx-auto mb-6 rounded-full gradient-bg-2 flex items-center justify-center text-6xl">
+        👤
+       </div>
+       <h3 class="text-xl font-bold mb-2">รองประธาน</h3>
+       <p class="text-sm font-light mb-4">สนับสนุนและประสานงาน</p>
+       <div class="text-sm opacity-75">
+        เชื่อมต่อ • สนับสนุน
+       </div>
+      </div>
+      <div class="text-center card-float p-8 rounded-3xl" style="background: #ffffff;">
+       <div class="w-32 h-32 mx-auto mb-6 rounded-full gradient-bg-3 flex items-center justify-center text-6xl">
+        👤
+       </div>
+       <h3 class="text-xl font-bold mb-2">เลขานุการ</h3>
+       <p class="text-sm font-light mb-4">จัดการและบริหาร</p>
+       <div class="text-sm opacity-75">
+        จัดการ • บันทึก
+       </div>
+      </div>
+      <div class="text-center card-float p-8 rounded-3xl" style="background: #ffffff;">
+       <div class="w-32 h-32 mx-auto mb-6 rounded-full" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+        <div class="w-full h-full flex items-center justify-center text-6xl">
+         👤
+        </div>
+       </div>
+       <h3 class="text-xl font-bold mb-2">เหรัญญิก</h3>
+       <p class="text-sm font-light mb-4">การเงินและบัญชี</p>
+       <div class="text-sm opacity-75">
+        จัดการ • โปร่งใส
+       </div>
+      </div>
+     </div>
+     <div class="text-center mb-12">
+      <h3 class="text-3xl font-bold mb-8">กรรมการฝ่ายต่างๆ</h3>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 rounded-2xl card-float" style="background: #ffffff;">
+       <div class="text-4xl mb-4">
+        📚
+       </div>
+       <h4 class="text-xl font-bold mb-2">ฝ่ายพัฒนาหลักสูตร</h4>
+       <p class="font-light">พัฒนาเนื้อหาและโปรแกรมการสอน</p>
+      </div>
+      <div class="p-6 rounded-2xl card-float" style="background: #ffffff;">
+       <div class="text-4xl mb-4">
+        🎵
+       </div>
+       <h4 class="text-xl font-bold mb-2">ฝ่ายนมัสการและดนตรี</h4>
+       <p class="font-light">นำนมัสการและพัฒนาดนตรีสรรเสริญ</p>
+      </div>
+      <div class="p-6 rounded-2xl card-float" style="background: #ffffff;">
+       <div class="text-4xl mb-4">
+        📢
+       </div>
+       <h4 class="text-xl font-bold mb-2">ฝ่ายประชาสัมพันธ์</h4>
+       <p class="font-light">สื่อสารและเผยแพร่ข้อมูลข่าวสาร</p>
+      </div>
+      <div class="p-6 rounded-2xl card-float" style="background: #ffffff;">
+       <div class="text-4xl mb-4">
+        🤝
+       </div>
+       <h4 class="text-xl font-bold mb-2">ฝ่ายเครือข่าย</h4>
+       <p class="font-light">สร้างความสัมพันธ์กับคริสตจักร</p>
+      </div>
+      <div class="p-6 rounded-2xl card-float" style="background: #ffffff;">
+       <div class="text-4xl mb-4">
+        🎯
+       </div>
+       <h4 class="text-xl font-bold mb-2">ฝ่ายโครงการพิเศษ</h4>
+       <p class="font-light">วางแผนและดำเนินการค่ายและกิจกรรม</p>
+      </div>
+      <div class="p-6 rounded-2xl card-float" style="background: #ffffff;">
+       <div class="text-4xl mb-4">
+        💻
+       </div>
+       <h4 class="text-xl font-bold mb-2">ฝ่ายเทคโนโลยี</h4>
+       <p class="font-light">พัฒนาระบบและสื่อดิจิทัล</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="py-24">
+    <div class="max-w-7xl mx-auto px-4">
+     <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div>
+       <div class="text-sm font-bold mb-4 opacity-75">
+        เราคือใคร
+       </div>
+       <h2 id="about-title" class="text-4xl md:text-6xl font-black mb-6 leading-tight"></h2>
+       <p class="text-xl font-light mb-6 leading-relaxed">องค์กรระดับชาติที่ทำงานร่วมกับเยาวชนคริสเตียนทั่วประเทศไทย เพื่อสร้างผู้นำที่มีความเชื่อมั่น มีทักษะ และพร้อมรับใช้</p>
+       <div class="space-y-4">
+        <div class="flex items-start">
+         <div id="check-icon-1" class="w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+          <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+          </svg>
+         </div>
+         <div>
+          <h4 class="font-bold text-lg mb-1">วิสัยทัศน์</h4>
+          <p class="font-light">เยาวชนคริสเตียนที่เข้มแข็ง เชื่อมต่อ และเป็นหนึ่งเดียว</p>
+         </div>
+        </div>
+        <div class="flex items-start">
+         <div id="check-icon-2" class="w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+          <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+          </svg>
+         </div>
+         <div>
+          <h4 class="font-bold text-lg mb-1">พันธกิจ</h4>
+          <p class="font-light">พัฒนาผู้นำ สร้างเครือข่าย และส่งเสริมการรับใช้</p>
+         </div>
+        </div>
+        <div class="flex items-start">
+         <div id="check-icon-3" class="w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+          <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+          </svg>
+         </div>
+         <div>
+          <h4 class="font-bold text-lg mb-1">คุณค่า</h4>
+          <p class="font-light">ความเชื่อ ความรัก การรับใช้ และความเป็นผู้นำ</p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="grid grid-cols-2 gap-6">
+       <div id="stat-1" class="p-8 rounded-3xl text-center card-float">
+        <div class="text-5xl font-black mb-2">
+         500+
+        </div>
+        <div class="font-medium opacity-75">
+         ผู้นำเยาวชน
+        </div>
+       </div>
+       <div id="stat-2" class="p-8 rounded-3xl text-center card-float">
+        <div class="text-5xl font-black mb-2">
+         50+
+        </div>
+        <div class="font-medium opacity-75">
+         คริสตจักร
+        </div>
+       </div>
+       <div id="stat-3" class="p-8 rounded-3xl text-center card-float">
+        <div class="text-5xl font-black mb-2">
+         20+
+        </div>
+        <div class="font-medium opacity-75">
+         โครงการต่อปี
+        </div>
+       </div>
+       <div id="stat-4" class="p-8 rounded-3xl text-center card-float">
+        <div class="text-5xl font-black mb-2">
+         1
+        </div>
+        <div class="font-medium opacity-75">
+         การเคลื่อนไหว
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Gallery Section -->
+   <section id="gallery" class="py-24" style="background: #f7fafc;">
+    <div class="max-w-7xl mx-auto px-4">
+     <div class="text-center mb-20">
+      <div class="text-sm font-bold mb-4 opacity-75">
+       ภาพบรรยากาศ
+      </div>
+      <h2 class="text-5xl md:text-7xl font-black mb-6">แกลเลอรี่</h2>
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto font-light">ภาพความทรงจำจากกิจกรรมและการเคลื่อนไหวต่างๆ</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="rounded-3xl overflow-hidden card-float h-80 gradient-bg-1 flex items-center justify-center">
+       <div class="text-center text-white p-8">
+        <div class="text-7xl mb-4">
+         ⛺
+        </div>
+        <h3 class="text-2xl font-bold">Youth Camp 2024</h3>
+        <p class="text-sm font-light mt-2">ค่ายเยาวชนระดับชาติ</p>
+       </div>
+      </div>
+      <div class="rounded-3xl overflow-hidden card-float h-80 gradient-bg-2 flex items-center justify-center">
+       <div class="text-center text-white p-8">
+        <div class="text-7xl mb-4">
+         🎤
+        </div>
+        <h3 class="text-2xl font-bold">Worship Night</h3>
+        <p class="text-sm font-light mt-2">คืนนมัสการสุดพิเศษ</p>
+       </div>
+      </div>
+      <div class="rounded-3xl overflow-hidden card-float h-80 gradient-bg-3 flex items-center justify-center">
+       <div class="text-center text-white p-8">
+        <div class="text-7xl mb-4">
+         📖
+        </div>
+        <h3 class="text-2xl font-bold">Bible Study</h3>
+        <p class="text-sm font-light mt-2">กลุ่มศึกษาพระคัมภีร์</p>
+       </div>
+      </div>
+      <div class="rounded-3xl overflow-hidden card-float h-80" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+       <div class="h-full flex items-center justify-center text-center text-white p-8">
+        <div>
+         <div class="text-7xl mb-4">
+          🏆
+         </div>
+         <h3 class="text-2xl font-bold">Competition Day</h3>
+         <p class="text-sm font-light mt-2">วันแข่งขันพระคัมภีร์</p>
+        </div>
+       </div>
+      </div>
+      <div class="rounded-3xl overflow-hidden card-float h-80" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+       <div class="h-full flex items-center justify-center text-center text-white p-8">
+        <div>
+         <div class="text-7xl mb-4">
+          🎨
+         </div>
+         <h3 class="text-2xl font-bold">Creative Workshop</h3>
+         <p class="text-sm font-light mt-2">เวิร์คช็อปสร้างสรรค์</p>
+        </div>
+       </div>
+      </div>
+      <div class="rounded-3xl overflow-hidden card-float h-80" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+       <div class="h-full flex items-center justify-center text-center text-white p-8">
+        <div>
+         <div class="text-7xl mb-4">
+          🙏
+         </div>
+         <h3 class="text-2xl font-bold">Prayer Meeting</h3>
+         <p class="text-sm font-light mt-2">ค่ำคืนอธิษฐาน</p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="text-center"><button class="px-10 py-4 rounded-full font-bold text-lg transition-all hover:scale-105" style="background: #667eea; color: white;"> ดูทั้งหมด </button>
+     </div>
+    </div>
+   </section><!-- Projects Section -->
+   <section id="projects" class="py-24">
+    <div class="max-w-7xl mx-auto px-4">
+     <div class="text-center mb-20">
+      <div class="text-sm font-bold mb-4 opacity-75">
+       สิ่งที่เราทำ
+      </div>
+      <h2 id="projects-title" class="text-5xl md:text-7xl font-black mb-6"></h2>
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto font-light">กิจกรรมและโครงการที่สร้างผลกระทบและพัฒนาเยาวชน</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8">
+      <div id="project-1" class="rounded-3xl overflow-hidden card-float">
+       <div class="h-64 gradient-bg-1 flex items-center justify-center">
+        <div class="text-8xl">
+         ⛺
+        </div>
+       </div>
+       <div class="p-8">
+        <div class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-4">
+         รายปี
+        </div>
+        <h3 class="text-2xl font-black mb-3">ค่ายเยาวชนระดับชาติ</h3>
+        <p class="font-light leading-relaxed mb-4">ค่ายเยาวชนระดับชาติที่รวมพลังจากทั่วประเทศ เพื่อเรียนรู้ นมัสการ และสร้างความสัมพันธ์</p><a href="#" class="font-bold inline-flex items-center hover:gap-3 gap-2 transition-all"> ดูรายละเอียด 
+         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+         </svg></a>
+       </div>
+      </div>
+      <div id="project-2" class="rounded-3xl overflow-hidden card-float">
+       <div class="h-64 gradient-bg-2 flex items-center justify-center">
+        <div class="text-8xl">
+         📚
+        </div>
+       </div>
+       <div class="p-8">
+        <div class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-4">
+         อบรม
+        </div>
+        <h3 class="text-2xl font-black mb-3">พัฒนาผู้นำ</h3>
+        <p class="font-light leading-relaxed mb-4">อบรมและพัฒนาผู้นำเยาวชนให้พร้อมรับใช้และนำทางในคริสตจักรและสังคม</p><a href="#" class="font-bold inline-flex items-center hover:gap-3 gap-2 transition-all"> ดูรายละเอียด 
+         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+         </svg></a>
+       </div>
+      </div>
+      <div id="project-3" class="rounded-3xl overflow-hidden card-float">
+       <div class="h-64 gradient-bg-3 flex items-center justify-center">
+        <div class="text-8xl">
+         🎵
+        </div>
+       </div>
+       <div class="p-8">
+        <div class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-4">
+         สร้างสรรค์
+        </div>
+        <h3 class="text-2xl font-black mb-3">นมัสการและศิลปะ</h3>
+        <p class="font-light leading-relaxed mb-4">พัฒนาความสามารถด้านดนตรี ศิลปะ และการนมัสการแบบร่วมสมัย</p><a href="#" class="font-bold inline-flex items-center hover:gap-3 gap-2 transition-all"> ดูรายละเอียด 
+         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+         </svg></a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Resources Section -->
+   <section id="resources" class="py-24" style="background: #ffffff;">
+    <div class="max-w-7xl mx-auto px-4">
+     <div class="text-center mb-20">
+      <div class="text-sm font-bold mb-4 opacity-75">
+       สื่อและเครื่องมือ
+      </div>
+      <h2 class="text-5xl md:text-7xl font-black mb-6">ทรัพยากร</h2>
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto font-light">สื่อการสอน เอกสาร และเครื่องมือสำหรับผู้นำเยาวชน</p>
+     </div>
+     <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <div class="p-10 rounded-3xl card-float" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+       <div class="text-white">
+        <div class="text-6xl mb-6">
+         📚
+        </div>
+        <h3 class="text-3xl font-black mb-4">หลักสูตรการสอน</h3>
+        <p class="text-lg font-light mb-6">หลักสูตรและแผนการสอนสำหรับกลุ่มเยาวชนทุกช่วงวัย</p><button class="px-8 py-3 bg-white rounded-full font-bold transition-all hover:scale-105" style="color: #667eea;"> ดาวน์โหลด </button>
+       </div>
+      </div>
+      <div class="p-10 rounded-3xl card-float" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+       <div class="text-white">
+        <div class="text-6xl mb-6">
+         🎵
+        </div>
+        <h3 class="text-3xl font-black mb-4">เพลงนมัสการ</h3>
+        <p class="text-lg font-light mb-6">คอร์ดเพลง โน้ตเพลง และเนื้อเพลงสรรเสริญ</p><button class="px-8 py-3 bg-white rounded-full font-bold transition-all hover:scale-105" style="color: #f5576c;"> เปิดดู </button>
+       </div>
+      </div>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-8 rounded-2xl card-float" style="background: #f7fafc;">
+       <div class="text-5xl mb-4">
+        📖
+       </div>
+       <h4 class="text-xl font-bold mb-3">คู่มือผู้นำ</h4>
+       <p class="font-light mb-4">เอกสารและคู่มือสำหรับผู้นำเยาวชน</p><a href="#" class="font-bold inline-flex items-center hover:gap-3 gap-2 transition-all" style="color: #667eea;"> ดาวน์โหลด 
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+        </svg></a>
+      </div>
+      <div class="p-8 rounded-2xl card-float" style="background: #f7fafc;">
+       <div class="text-5xl mb-4">
+        🎬
+       </div>
+       <h4 class="text-xl font-bold mb-3">วิดีโอสอน</h4>
+       <p class="font-light mb-4">คลิปวิดีโอและสื่อการสอนออนไลน์</p><a href="#" class="font-bold inline-flex items-center hover:gap-3 gap-2 transition-all" style="color: #667eea;"> ดูวิดีโอ 
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg></a>
+      </div>
+      <div class="p-8 rounded-2xl card-float" style="background: #f7fafc;">
+       <div class="text-5xl mb-4">
+        🎯
+       </div>
+       <h4 class="text-xl font-bold mb-3">แบบฟอร์ม</h4>
+       <p class="font-light mb-4">แบบฟอร์มและเทมเพลตสำหรับงานต่างๆ</p><a href="#" class="font-bold inline-flex items-center hover:gap-3 gap-2 transition-all" style="color: #667eea;"> ดาวน์โหลด 
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg></a>
+      </div>
+      <div class="p-8 rounded-2xl card-float" style="background: #f7fafc;">
+       <div class="text-5xl mb-4">
+        💡
+       </div>
+       <h4 class="text-xl font-bold mb-3">ไอเดียกิจกรรม</h4>
+       <p class="font-light mb-4">ไอเดียและแนวคิดกิจกรรมสำหรับเยาวชน</p><a href="#" class="font-bold inline-flex items-center hover:gap-3 gap-2 transition-all" style="color: #667eea;"> อ่านเพิ่ม 
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg></a>
+      </div>
+      <div class="p-8 rounded-2xl card-float" style="background: #f7fafc;">
+       <div class="text-5xl mb-4">
+        📊
+       </div>
+       <h4 class="text-xl font-bold mb-3">เครื่องมือประเมิน</h4>
+       <p class="font-light mb-4">แบบประเมินและเครื่องมือวัดผล</p><a href="#" class="font-bold inline-flex items-center hover:gap-3 gap-2 transition-all" style="color: #667eea;"> ดาวน์โหลด 
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg></a>
+      </div>
+      <div class="p-8 rounded-2xl card-float" style="background: #f7fafc;">
+       <div class="text-5xl mb-4">
+        🌟
+       </div>
+       <h4 class="text-xl font-bold mb-3">แรงบันดาลใจ</h4>
+       <p class="font-light mb-4">บทความและเรื่องราวสร้างแรงบันดาลใจ</p><a href="#" class="font-bold inline-flex items-center hover:gap-3 gap-2 transition-all" style="color: #667eea;"> อ่านบทความ 
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        </svg></a>
+      </div>
+     </div>
+    </div>
+   </section><!-- News Section -->
+   <section id="news" class="py-24" style="background: #f7fafc;">
+    <div class="max-w-7xl mx-auto px-4">
+     <div class="text-center mb-20">
+      <div class="text-sm font-bold mb-4 opacity-75">
+       อัพเดทล่าสุด
+      </div>
+      <h2 class="text-5xl md:text-7xl font-black mb-6">ข่าวสาร</h2>
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto font-light">ข่าวสารและประกาศสำคัญจาก SYNC</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <div class="rounded-3xl overflow-hidden card-float" style="background: #ffffff;">
+       <div class="h-48 gradient-bg-1 flex items-center justify-center">
+        <div class="text-7xl">
+         ⛺
+        </div>
+       </div>
+       <div class="p-8">
+        <div class="text-xs font-bold mb-2 opacity-50">
+         15 ธันวาคม 2567
+        </div>
+        <h3 class="text-xl font-black mb-3">เปิดรับสมัครค่ายเยาวชน 2025</h3>
+        <p class="font-light mb-4 leading-relaxed">เปิดรับสมัครค่ายเยาวชนระดับชาติประจำปี 2568 แล้ว! จำนวนจำกัด สมัครเลย</p><a href="#" class="font-bold inline-flex items-center hover:gap-3 gap-2 transition-all" style="color: #667eea;"> อ่านต่อ 
+         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+         </svg></a>
+       </div>
+      </div>
+      <div class="rounded-3xl overflow-hidden card-float" style="background: #ffffff;">
+       <div class="h-48 gradient-bg-2 flex items-center justify-center">
+        <div class="text-7xl">
+         🎤
+        </div>
+       </div>
+       <div class="p-8">
+        <div class="text-xs font-bold mb-2 opacity-50">
+         10 ธันวาคม 2567
+        </div>
+        <h3 class="text-xl font-black mb-3">Worship Night ครั้งที่ 12</h3>
+        <p class="font-light mb-4 leading-relaxed">คืนนมัสการพิเศษ วันศุกร์ที่ 20 ธันวาคม เวลา 19.00 น. ร่วมนมัสการไปด้วยกัน</p><a href="#" class="font-bold inline-flex items-center hover:gap-3 gap-2 transition-all" style="color: #667eea;"> อ่านต่อ 
+         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+         </svg></a>
+       </div>
+      </div>
+      <div class="rounded-3xl overflow-hidden card-float" style="background: #ffffff;">
+       <div class="h-48 gradient-bg-3 flex items-center justify-center">
+        <div class="text-7xl">
+         📚
+        </div>
+       </div>
+       <div class="p-8">
+        <div class="text-xs font-bold mb-2 opacity-50">
+         5 ธันวาคม 2567
+        </div>
+        <h3 class="text-xl font-black mb-3">หลักสูตรผู้นำใหม่</h3>
+        <p class="font-light mb-4 leading-relaxed">เปิดตัวหลักสูตรพัฒนาผู้นำรุ่นใหม่ 2568 พร้อมเนื้อหาที่อัพเดทและทันสมัย</p><a href="#" class="font-bold inline-flex items-center hover:gap-3 gap-2 transition-all" style="color: #667eea;"> อ่านต่อ 
+         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+         </svg></a>
+       </div>
+      </div>
+     </div>
+     <div class="text-center"><button class="px-10 py-4 rounded-full font-bold text-lg transition-all hover:scale-105" style="background: #667eea; color: white;"> ดูข่าวสารทั้งหมด </button>
+     </div>
+    </div>
+   </section><!-- Join Section -->
+   <section id="join" class="py-24 relative overflow-hidden">
+    <div id="join-gradient" class="absolute inset-0"></div>
+    <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+     <div class="text-sm font-bold mb-6 opacity-90">
+      พร้อมที่จะเริ่มต้น?
+     </div>
+     <h2 id="join-title" class="text-5xl md:text-8xl font-black mb-8"></h2>
+     <p class="text-xl md:text-2xl font-light mb-12 max-w-3xl mx-auto">เข้าร่วมการเคลื่อนไหวที่กำลังเปลี่ยนแปลงเยาวชนคริสเตียนทั่วประเทศไทย</p>
+     <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"><button id="join-cta" class="px-12 py-6 rounded-full font-black text-xl transition-all duration-300 hover:scale-110 shadow-2xl"></button> <button class="px-12 py-6 rounded-full font-black text-xl border-4 transition-all duration-300 hover:scale-105"> ดูข้อมูลเพิ่มเติม </button>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      <div id="contact-1" class="p-6 rounded-2xl backdrop-blur">
+       <div class="text-3xl mb-3">
+        📧
+       </div>
+       <h4 class="font-bold mb-2">อีเมล</h4>
+       <p class="text-sm">sync@ccthailand.org</p>
+      </div>
+      <div id="contact-2" class="p-6 rounded-2xl backdrop-blur">
+       <div class="text-3xl mb-3">
+        📱
+       </div>
+       <h4 class="font-bold mb-2">โซเชียลมีเดีย</h4>
+       <p class="text-sm">@syncyouth_thailand</p>
+      </div>
+      <div id="contact-3" class="p-6 rounded-2xl backdrop-blur">
+       <div class="text-3xl mb-3">
+        💬
+       </div>
+       <h4 class="font-bold mb-2">ไลน์ออฟฟิเชียล</h4>
+       <p class="text-sm">@syncyouthcct</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer id="footer" class="py-12">
+    <div class="max-w-7xl mx-auto px-4">
+     <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+      <div class="mb-6 md:mb-0 text-center md:text-left">
+       <div class="font-black text-3xl gradient-text mb-2">
+        SYNC
+       </div>
+       <p class="font-light">คณะกรรมการดำเนินงานอนุชนสภาคริสตจักรในประเทศไทย</p>
+      </div>
+      <div class="flex space-x-4"><a href="https://www.facebook.com/cctthenextgen2019" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-xl flex items-center justify-center transition-all hover:scale-110">
+        <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+        </svg></a> <a href="https://www.instagram.com/cctthenextgen2019/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-xl flex items-center justify-center transition-all hover:scale-110">
+        <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
+        </svg></a> <a href="#" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-xl flex items-center justify-center transition-all hover:scale-110">
+        <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+        </svg></a>
+      </div>
+     </div>
+     <div class="border-t pt-6 text-center font-light text-sm opacity-75">
+      <p>© 2026 SYNC • อนุชนสภาคริสตจักรในประเทศไทย • สงวนลิขสิทธิ์</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      primary_color: "#667eea",
+      secondary_color: "#764ba2",
+      accent_color: "#f093fb",
+      surface_color: "#ffffff",
+      text_color: "#1a202c",
+      hero_headline: "SYNC",
+      hero_tagline: "Connecting Faith, Life, and Generation",
+      hero_verse: "เพื่อตระเตรียมวิสุทธิชนให้พร้อมที่จะปฏิบัติงานรับใช้ เพื่อจะได้สร้างพระกายของพระคริสต์ให้เจริญขึ้น จนกว่าเราทุกคนจะมาถึงความเป็นน้ำหนึ่งใจเดียวกันในความเชื่อและในความรู้ถึงพระบุตรของพระเจ้า และเป็นผู้เต็มเปี่ยมจนถึงขนาดความเต็มบริบูรณ์ของพระคริสต์",
+      hero_cta: "เข้าร่วมการเคลื่อนไหว",
+      sync_title: "SYNC คืออะไร?",
+      about_title: "อนุชนสภาคริสตจักรในประเทศไทย",
+      projects_title: "โครงการและการเคลื่อนไหว",
+      join_title: "Join the SYNC Movement",
+      join_cta: "เริ่มต้นเลย",
+      font_family: "Kanit",
+      font_size: 16
+    };
+
+    async function onConfigChange(config) {
+      const primaryColor = config.primary_color || defaultConfig.primary_color;
+      const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+      const accentColor = config.accent_color || defaultConfig.accent_color;
+      const surfaceColor = config.surface_color || defaultConfig.surface_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      const fontSize = config.font_size || defaultConfig.font_size;
+
+      // Apply colors
+      document.getElementById('navbar').style.background = `rgba(255, 255, 255, 0.85)`;
+      document.getElementById('navbar').style.color = textColor;
+      document.getElementById('nav-logo').style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+      document.getElementById('nav-logo').style.color = surfaceColor;
+      
+      document.getElementById('hero-gradient').style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+      document.getElementById('home').style.color = surfaceColor;
+      document.getElementById('hero-badge').style.background = `rgba(255, 255, 255, 0.2)`;
+      document.getElementById('hero-badge').style.color = surfaceColor;
+      document.getElementById('hero-verse-container').style.background = `rgba(255, 255, 255, 0.1)`;
+      document.getElementById('hero-cta').style.background = surfaceColor;
+      document.getElementById('hero-cta').style.color = primaryColor;
+      document.getElementById('hero-cta-secondary').style.borderColor = surfaceColor;
+      document.getElementById('hero-cta-secondary').style.color = surfaceColor;
+      
+      document.getElementById('sync').style.background = surfaceColor;
+      document.getElementById('sync').style.color = textColor;
+      
+      ['sync-card-1', 'sync-card-2', 'sync-card-3', 'sync-card-4'].forEach((id, index) => {
+        const colors = [primaryColor, secondaryColor, accentColor, '#4facfe'];
+        const card = document.getElementById(id);
+        card.style.background = surfaceColor;
+        card.style.color = textColor;
+        card.querySelector('.absolute').style.background = colors[index];
+      });
+      
+      document.getElementById('about').style.background = `${primaryColor}08`;
+      document.getElementById('about').style.color = textColor;
+      
+      ['check-icon-1', 'check-icon-2', 'check-icon-3'].forEach(id => {
+        document.getElementById(id).style.background = primaryColor;
+        document.getElementById(id).style.color = surfaceColor;
+      });
+      
+      ['stat-1', 'stat-2', 'stat-3', 'stat-4'].forEach(id => {
+        document.getElementById(id).style.background = surfaceColor;
+        document.getElementById(id).style.color = textColor;
+      });
+      
+      document.getElementById('projects').style.background = surfaceColor;
+      document.getElementById('projects').style.color = textColor;
+      
+      ['project-1', 'project-2', 'project-3'].forEach(id => {
+        const project = document.getElementById(id);
+        project.style.background = surfaceColor;
+        project.style.color = textColor;
+        const badge = project.querySelector('.inline-block');
+        badge.style.background = `${accentColor}30`;
+        badge.style.color = secondaryColor;
+        const link = project.querySelector('a');
+        link.style.color = primaryColor;
+      });
+      
+      document.getElementById('join-gradient').style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+      document.getElementById('join').style.color = surfaceColor;
+      document.getElementById('join-cta').style.background = surfaceColor;
+      document.getElementById('join-cta').style.color = primaryColor;
+      document.querySelectorAll('#join button')[1].style.borderColor = surfaceColor;
+      document.querySelectorAll('#join button')[1].style.color = surfaceColor;
+      
+      ['contact-1', 'contact-2', 'contact-3'].forEach(id => {
+        document.getElementById(id).style.background = `rgba(255, 255, 255, 0.1)`;
+      });
+      
+      document.getElementById('footer').style.background = textColor;
+      document.getElementById('footer').style.color = surfaceColor;
+      document.querySelectorAll('#footer a').forEach((link, index) => {
+        const colors = [primaryColor, secondaryColor, accentColor];
+        link.style.background = `${colors[index]}30`;
+        link.style.color = surfaceColor;
+      });
+
+      // Apply text content
+      document.getElementById('hero-headline').textContent = config.hero_headline || defaultConfig.hero_headline;
+      document.getElementById('hero-tagline').textContent = config.hero_tagline || defaultConfig.hero_tagline;
+      document.getElementById('hero-verse').textContent = config.hero_verse || defaultConfig.hero_verse;
+      document.getElementById('hero-cta').textContent = config.hero_cta || defaultConfig.hero_cta;
+      document.getElementById('sync-title').textContent = config.sync_title || defaultConfig.sync_title;
+      document.getElementById('about-title').textContent = config.about_title || defaultConfig.about_title;
+      document.getElementById('projects-title').textContent = config.projects_title || defaultConfig.projects_title;
+      document.getElementById('join-title').textContent = config.join_title || defaultConfig.join_title;
+      document.getElementById('join-cta').textContent = config.join_cta || defaultConfig.join_cta;
+
+      // Apply font
+      const baseFontStack = 'sans-serif';
+      const fontStack = `${fontFamily}, ${baseFontStack}`;
+      document.body.style.fontFamily = fontStack;
+
+      // Apply font sizes
+      document.getElementById('hero-headline').style.fontSize = `${fontSize * 5}px`;
+      document.getElementById('hero-tagline').style.fontSize = `${fontSize * 1.5}px`;
+      document.getElementById('sync-title').style.fontSize = `${fontSize * 3}px`;
+      document.getElementById('about-title').style.fontSize = `${fontSize * 2.5}px`;
+      document.getElementById('projects-title').style.fontSize = `${fontSize * 3}px`;
+      document.getElementById('join-title').style.fontSize = `${fontSize * 3.5}px`;
+      
+      document.querySelectorAll('h3').forEach(h3 => {
+        h3.style.fontSize = `${fontSize * 1.5}px`;
+      });
+      
+      document.querySelectorAll('p, a, button, span').forEach(el => {
+        if (!el.classList.contains('text-xs') && !el.classList.contains('text-sm')) {
+          el.style.fontSize = `${fontSize}px`;
+        }
+      });
+    }
+
+    // Carousel functionality
+    let currentSlide = 0;
+    const totalSlides = 4;
+    const carouselTrack = document.getElementById('carousel-track');
+    const indicators = document.querySelectorAll('.carousel-indicator');
+
+    function updateCarousel() {
+      carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+      
+      indicators.forEach((indicator, index) => {
+        if (index === currentSlide) {
+          indicator.classList.remove('bg-white/50');
+          indicator.classList.add('bg-white');
+        } else {
+          indicator.classList.remove('bg-white');
+          indicator.classList.add('bg-white/50');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    document.getElementById('carousel-next').addEventListener('click', nextSlide);
+    document.getElementById('carousel-prev').addEventListener('click', prevSlide);
+
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        currentSlide = index;
+        updateCarousel();
+      });
+    });
+
+    // Auto-advance carousel
+    let carouselInterval = setInterval(nextSlide, 5000);
+
+    // Pause on hover
+    const carouselSection = document.querySelector('section.pt-20');
+    carouselSection.addEventListener('mouseenter', () => {
+      clearInterval(carouselInterval);
+    });
+
+    carouselSection.addEventListener('mouseleave', () => {
+      carouselInterval = setInterval(nextSlide, 5000);
+    });
+
+    // Mobile menu
+    document.getElementById('mobile-menu-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+
+    // Navbar scroll
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.pageYOffset > 100) {
+        navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+      } else {
+        navbar.style.boxShadow = 'none';
+      }
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Initialize SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.primary_color || defaultConfig.primary_color,
+              set: (value) => {
+                config.primary_color = value;
+                window.elementSdk.setConfig({ primary_color: value });
+              }
+            },
+            {
+              get: () => config.secondary_color || defaultConfig.secondary_color,
+              set: (value) => {
+                config.secondary_color = value;
+                window.elementSdk.setConfig({ secondary_color: value });
+              }
+            },
+            {
+              get: () => config.accent_color || defaultConfig.accent_color,
+              set: (value) => {
+                config.accent_color = value;
+                window.elementSdk.setConfig({ accent_color: value });
+              }
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => {
+                config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["hero_headline", config.hero_headline || defaultConfig.hero_headline],
+          ["hero_tagline", config.hero_tagline || defaultConfig.hero_tagline],
+          ["hero_verse", config.hero_verse || defaultConfig.hero_verse],
+          ["hero_cta", config.hero_cta || defaultConfig.hero_cta],
+          ["sync_title", config.sync_title || defaultConfig.sync_title],
+          ["about_title", config.about_title || defaultConfig.about_title],
+          ["projects_title", config.projects_title || defaultConfig.projects_title],
+          ["join_title", config.join_title || defaultConfig.join_title],
+          ["join_cta", config.join_cta || defaultConfig.join_cta]
+        ])
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b717d75733a893d',t:'MTc2NzI2NDk4Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
